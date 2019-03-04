@@ -24,6 +24,7 @@ public class CustomAccessVoter implements AccessDecisionVoter<Object> {
 	public int vote(Authentication authentication, Object o, Collection<ConfigAttribute> collection) {
 
 		// this authentication is taken from authentication context
+		// todo debug here
 		if (authentication instanceof CustomAuthorization) {
 			List<String> roles = ((CustomAuthorization) authentication).getAccess();
 			List<String> configAttribute = collection.stream().map(ConfigAttribute::getAttribute).collect(Collectors.toList());
