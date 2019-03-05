@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/hello")
 public class HelloResource {
 
-	@Secured("hello_read")
+	@Secured("hello_update")
 	@GetMapping("/")
 	public String getHelloResource() {
 		return "HelloResource";
